@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Me | Nurul Ain Natasha</title>
+
+<!-- FONT AWESOME -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+:root{
+    --primary:#c1a37f;
+    --secondary:#f1e7dc;
+    --accent:#d6c2aa;
+    --bg:#faf7f3;
+    --card:#ffffff;
+    --text:#3e3e3e;
+}
+
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    font-family:'Segoe UI',sans-serif;
+    background:var(--bg);
+    color:var(--text);
+}
+
+/* NAVIGATION */
+nav{
+    position:sticky;
+    top:0;
+    background:#ffffff;
+    box-shadow:0 5px 20px rgba(0,0,0,0.08);
+    z-index:1000;
+}
+
+.nav-container{
+    display:flex;
+    justify-content:center;
+    padding:15px 0;
+    flex-wrap:wrap;
+}
+
+.nav-container a{
+    text-decoration:none;
+    color:var(--primary);
+    margin:6px 15px;
+    font-weight:600;
+    padding:8px 18px;
+    border-radius:25px;
+    transition:0.3s;
+}
+
+.nav-container a:hover,
+.nav-container a.active{
+    background:var(--primary);
+    color:white;
+}
+
+/* HEADER */
+header{
+    background:linear-gradient(135deg,#efe3d5,#cbb59c);
+    padding:70px 10% 55px;
+}
+
+header h1{
+    margin:0;
+    font-size:2.5em;
+}
+
+/* MAIN */
+main{
+    padding:70px 10%;
+}
+
+/* SECTION TITLE */
+.section-title{
+    font-size:2.2em;
+    color:#8a6d5c;
+    margin-bottom:40px;
+}
+
+.section-title::after{
+    content:'';
+    width:70px;
+    height:4px;
+    background:var(--accent);
+    display:block;
+    margin-top:10px;
+    border-radius:10px;
+}
+
+/* CONTACT CONTAINER */
+.contact-container{
+    display:flex;
+    gap:40px;
+    flex-wrap:wrap;
+}
+
+/* CONTACT INFO */
+.contact-info{
+    flex:1;
+    min-width:280px;
+}
+
+.contact-info div{
+    background:var(--card);
+    padding:25px 20px;
+    border-radius:20px;
+    box-shadow:0 15px 35px rgba(0,0,0,0.08);
+    margin-bottom:20px;
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.contact-info div i{
+    font-size:1.5em;
+    color:var(--primary);
+}
+
+/* CONTACT FORM */
+.contact-form{
+    flex:1;
+    min-width:280px;
+    background:var(--card);
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0 15px 35px rgba(0,0,0,0.08);
+}
+
+.contact-form input,
+.contact-form textarea{
+    width:100%;
+    padding:12px 15px;
+    margin-bottom:18px;
+    border:1px solid #ccc;
+    border-radius:12px;
+    font-size:1em;
+}
+
+.contact-form button{
+    padding:12px 25px;
+    background:var(--primary);
+    color:white;
+    border:none;
+    border-radius:25px;
+    font-weight:600;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.contact-form button:hover{
+    opacity:0.9;
+}
+
+/* FOOTER */
+footer{
+    background:#efe6dc;
+    text-align:center;
+    padding:25px;
+    font-size:0.9em;
+    color:#6b4f3f;
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+<nav>
+    <div class="nav-container">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Me</a>
+        <a href="skills.html">Skills</a>
+        <a href="experience.html">Experience</a>
+        <a href="education.html">Education</a>
+        <a href="contact.html" class="active">Contact Me</a>
+    </div>
+</nav>
+
+<!-- HEADER -->
+<header>
+    <h1>Contact Me</h1>
+</header>
+
+<!-- MAIN -->
+<main>
+
+<h2 class="section-title">Get in Touch</h2>
+
+<div class="contact-container">
+
+    <!-- CONTACT INFO -->
+    <div class="contact-info">
+        <div>
+            <i class="fas fa-envelope"></i>
+            <span>ainnatashazahri.com</span>
+        </div>
+        <div>
+            <i class="fas fa-phone"></i>
+            <span>+60 10-2257638</span>
+        </div>
+        <div>
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Johor, Malaysia</span>
+        </div>
+        <div>
+            <i class="fab fa-instagram"></i>
+            <span>@aainzhri</span>
+        </div>
+    </div>
+
+    <!-- CONTACT FORM -->
+    <div class="contact-form">
+        <form action="#" method="post">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <input type="text" name="subject" placeholder="Subject" required>
+            <textarea name="message" rows="6" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
+
+</div>
+
+</main>
+
+<footer>
+<p>© 2025 Nurul Ain Natasha | Personal Profile Website</p>
+</footer>
+
+</body>
+</html>
