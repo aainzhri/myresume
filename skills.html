@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Skills | Nurul Ain Natasha</title>
+
+<!-- FONT AWESOME -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+:root{
+    --primary:#c1a37f;
+    --secondary:#f1e7dc;
+    --accent:#d6c2aa;
+    --bg:#faf7f3;
+    --card:#ffffff;
+    --text:#3e3e3e;
+}
+
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    font-family:'Segoe UI',sans-serif;
+    background:var(--bg);
+    color:var(--text);
+}
+
+/* NAVIGATION */
+nav{
+    position:sticky;
+    top:0;
+    background:#ffffff;
+    box-shadow:0 5px 20px rgba(0,0,0,0.08);
+    z-index:1000;
+}
+
+.nav-container{
+    display:flex;
+    justify-content:center;
+    padding:15px 0;
+    flex-wrap:wrap;
+}
+
+.nav-container a{
+    text-decoration:none;
+    color:var(--primary);
+    margin:6px 15px;
+    font-weight:600;
+    padding:8px 18px;
+    border-radius:25px;
+    transition:0.3s;
+}
+
+.nav-container a:hover,
+.nav-container a.active{
+    background:var(--primary);
+    color:white;
+}
+
+/* HEADER */
+header{
+    background:linear-gradient(135deg,#efe3d5,#cbb59c);
+    padding:70px 10% 55px;
+}
+
+header h1{
+    margin:0;
+    font-size:2.5em;
+}
+
+/* MAIN */
+main{
+    padding:70px 10%;
+}
+
+/* SECTION */
+.section-title{
+    font-size:2.2em;
+    color:#8a6d5c;
+    margin-bottom:40px;
+}
+
+.section-title::after{
+    content:'';
+    width:70px;
+    height:4px;
+    background:var(--accent);
+    display:block;
+    margin-top:10px;
+    border-radius:10px;
+}
+
+/* CARD */
+.card{
+    background:var(--card);
+    padding:28px 30px;
+    border-radius:20px;
+    box-shadow:0 15px 35px rgba(0,0,0,0.08);
+    margin-bottom:25px;
+}
+
+/* SKILL BAR */
+.skill{
+    margin-bottom:25px;
+}
+
+.skill p{
+    margin:0 0 8px;
+    font-weight:600;
+}
+
+.skill-bar{
+    position:relative;
+    height:22px;
+    background:var(--secondary);
+    border-radius:15px;
+    overflow:hidden;
+}
+
+.skill-bar span{
+    display:block;
+    height:100%;
+    background:var(--primary);
+    width:0%;
+    border-radius:15px;
+    transition:width 1.5s ease-in-out;
+}
+
+/* FOOTER */
+footer{
+    background:#efe6dc;
+    text-align:center;
+    padding:25px;
+    font-size:0.9em;
+    color:#6b4f3f;
+}
+
+/* RESPONSIVE */
+@media(max-width:600px){
+    header h1{
+        font-size:2em;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+<nav>
+    <div class="nav-container">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Me</a>
+        <a href="skills.html" class="active">Skills</a>
+        <a href="experience.html">Experience</a>
+        <a href="education.html">Education</a>
+        <a href="contact.html">Contact Me</a>
+        <a href="gallery.html">Visit My album</a>
+    </div>
+</nav>
+
+<!-- HEADER -->
+<header>
+    <h1>Skills</h1>
+</header>
+
+<!-- MAIN -->
+<main>
+
+<h2 class="section-title">My Skills</h2>
+
+<div class="card skill">
+<p>Records Management</p>
+<div class="skill-bar"><span style="width:90%"></span></div>
+</div>
+
+<div class="card skill">
+<p>Document Organization</p>
+<div class="skill-bar"><span style="width:85%"></span></div>
+</div>
+
+<div class="card skill">
+<p>Microsoft Office</p>
+<div class="skill-bar"><span style="width:95%"></span></div>
+</div>
+
+<div class="card skill">
+<p>HTML & CSS</p>
+<div class="skill-bar"><span style="width:75%"></span></div>
+</div>
+
+<div class="card skill">
+<p>Time Management</p>
+<div class="skill-bar"><span style="width:90%"></span></div>
+</div>
+
+<div class="card skill">
+<p>Teamwork</p>
+<div class="skill-bar"><span style="width:92%"></span></div>
+</div>
+
+</main>
+
+<footer>
+<p>© 2025 Nurul Ain Natasha | Personal Profile Website</p>
+</footer>
+
+<script>
+// Animate skill bars when page loads
+window.addEventListener('load', () => {
+    const bars = document.querySelectorAll('.skill-bar span');
+    bars.forEach(bar => {
+        const width = bar.style.width;
+        bar.style.width = '0%';
+        setTimeout(() => { bar.style.width = width; }, 300);
+    });
+});
+</script>
+
+</body>
+</html>
