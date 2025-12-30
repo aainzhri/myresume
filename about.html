@@ -1,4 +1,4 @@
-TYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -69,7 +69,6 @@ header{
     background: url('background.jpg') center/cover no-repeat;
 }
 
-/* overlay gradient untuk header */
 header::before{
     content: '';
     position: absolute;
@@ -77,7 +76,6 @@ header::before{
     left:0;
     width:100%;
     height:100%;
-  
 }
 
 .header-wrapper{
@@ -85,7 +83,7 @@ header::before{
     align-items:center;
     gap:40px;
     flex-wrap:wrap;
-    position: relative; /* supaya teks berada di atas overlay */
+    position: relative;
     z-index: 1;
 }
 
@@ -107,6 +105,17 @@ header::before{
     margin:10px 0 18px;
     font-size:1.05em;
 }
+
+/* ===== TAMBAHAN CLOCK STYLE (SAHAJA) ===== */
+.clock-date{
+    font-size:0.95em;
+    background:rgba(0,0,0,0.45);
+    display:inline-block;
+    padding:6px 14px;
+    border-radius:20px;
+    font-weight:600;
+}
+/* ======================================== */
 
 /* MAIN */
 main{
@@ -221,7 +230,6 @@ footer{
 
 <body>
 
-<!-- NAVIGATION -->
 <nav>
     <div class="nav-container">
         <a href="index.html">Home</a>
@@ -234,30 +242,33 @@ footer{
     </div>
 </nav>
 
-<!-- HEADER -->
 <header>
 <div class="header-wrapper">
     <img src="profile.jpg" alt="Profile Picture">
     <div class="header-text">
         <h1>About Me</h1>
         <p>Get to know more about who I am</p>
+
+        <!-- TAMBAHAN CLOCK + DATE -->
+        <div class="clock-date">
+            <i class="fas fa-clock"></i>
+            <span id="time"></span> |
+            <span id="date"></span>
+        </div>
     </div>
 </div>
 </header>
 
-<!-- MAIN -->
 <main>
 
 <section class="section">
 <h2 class="section-title">Personal Introduction</h2>
-
 <div class="card">
 <p>
 I am an Information Management student with a strong passion for organizing,
 managing, and preserving information effectively. I enjoy working with both
 physical and digital records to support efficient information systems.
 </p>
-
 <p>
 I am a responsible, detail-oriented, and organized individual who adapts well
 to new environments. I believe that good information management is essential
@@ -268,7 +279,6 @@ for decision-making and organizational success.
 
 <section class="section">
 <h2 class="section-title">Personal Information</h2>
-
 <div class="grid">
     <div class="card">
         <ul class="info-list">
@@ -293,19 +303,14 @@ for decision-making and organizational success.
 </div>
 </section>
 
-<!-- PLAYLIST SECTION -->
 <section class="section">
 <h2 class="section-title">My Favourite Playlist</h2>
-
 <div class="card playlist">
-    <iframe data-testid="embed-iframe" style="border-radius:12px" 
-    src="https://open.spotify.com/embed/playlist/10SN5xomBNlO8tjuvLmrgP?utm_source=generator" 
-    width="100%" height="152" frameborder="0" allowfullscreen="" 
-    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+    <iframe src="https://open.spotify.com/embed/playlist/10SN5xomBNlO8tjuvLmrgP?utm_source=generator"
+    loading="lazy"></iframe>
 </div>
 </section>
 
-<!-- TIMETABLE SECTION -->
 <section class="section">
 <h2 class="section-title">My Timetable</h2>
 
@@ -381,8 +386,22 @@ for decision-making and organizational success.
 <p>© 2025 Nurul Ain Natasha | Personal Profile Website</p>
 </footer>
 
+<!-- SCRIPT CLOCK (SAHAJA) -->
+<script>
+function updateClock(){
+    const now = new Date();
+    document.getElementById("time").innerHTML = now.toLocaleTimeString('en-GB');
+    document.getElementById("date").innerHTML = now.toLocaleDateString('en-GB',{
+        day:'numeric',
+        month:'long',
+        year:'numeric'
+    });
+}
+setInterval(updateClock,1000);
+updateClock();
+</script>
+
 </body>
 </html>
-
 
 
